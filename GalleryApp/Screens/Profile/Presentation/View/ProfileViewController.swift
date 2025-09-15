@@ -10,10 +10,13 @@ import Combine
 
 // MARK: - ProfileViewController
 final class ProfileViewController: UIViewController {
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userAddress: UILabel!
     @IBOutlet weak var albumTabelView: UITableView!
     
+    // MARK: - Vriables
     private let viewModel = ProfileViewModel()
     private var cancellables = Set<AnyCancellable>()
     

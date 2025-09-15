@@ -11,7 +11,10 @@ import Kingfisher
 // MARK: - PhotoCell
 class PhotoCell: UICollectionViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
+    
+    // MARK: - Vriable
     private var imageUrl: URL?
     // MARK: - Lifecycle
     override func awakeFromNib() {
@@ -34,7 +37,6 @@ class PhotoCell: UICollectionViewCell {
     // MARK: - Configuration
     func configure(with photo: Photo) {
         let updatedUrlString = convertPlaceholderUrl(photo.url)
-        print(updatedUrlString)
         if let url = URL(string: updatedUrlString) {
             self.imageUrl = url
             imageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"),

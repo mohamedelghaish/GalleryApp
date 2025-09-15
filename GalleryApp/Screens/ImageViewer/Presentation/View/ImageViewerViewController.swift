@@ -10,11 +10,13 @@ import Kingfisher
 
 // MARK: - ImageViewerViewController
 class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var closeBtn: UIButton!
     
+    // MARK: - Vriables
     let imageUrl: URL
     
     init(imageUrl: URL) {
@@ -117,7 +119,5 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
         present(activityVC, animated: true)
     }
     
-    @IBAction func closeBtn(sender: Any) {
-        dismiss(animated: true)
-    }
+    
 }

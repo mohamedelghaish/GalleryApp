@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,24 +31,10 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CP9-Ps-Izu">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-Sf-zH5">
-                                    <rect key="frame" x="5" y="64" width="60" height="34.333333333333343"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="60" id="TX4-Ey-L2q"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system"/>
-                                    <connections>
-                                        <action selector="closeBtnWithSender:" destination="-1" eventType="touchUpInside" id="mjH-ua-Avw"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="CP9-Ps-Izu" secondAttribute="bottom" id="DQa-fe-1mY"/>
-                                <constraint firstItem="xLa-Sf-zH5" firstAttribute="top" secondItem="JDh-VG-K6W" secondAttribute="top" constant="64" id="Ga6-oR-iib"/>
-                                <constraint firstItem="xLa-Sf-zH5" firstAttribute="leading" secondItem="JDh-VG-K6W" secondAttribute="leading" constant="5" id="JHy-pT-9rX"/>
                                 <constraint firstItem="CP9-Ps-Izu" firstAttribute="leading" secondItem="JDh-VG-K6W" secondAttribute="leading" id="d2R-JL-Ghp"/>
                                 <constraint firstAttribute="trailing" secondItem="CP9-Ps-Izu" secondAttribute="trailing" id="eRT-ng-dHk"/>
                                 <constraint firstItem="CP9-Ps-Izu" firstAttribute="top" secondItem="JDh-VG-K6W" secondAttribute="top" id="wwf-Ly-s6S"/>
@@ -90,7 +77,6 @@
         </view>
     </objects>
     <resources>
-        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

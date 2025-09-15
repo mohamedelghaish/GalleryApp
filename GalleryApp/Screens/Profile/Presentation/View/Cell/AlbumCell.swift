@@ -9,7 +9,8 @@ import UIKit
 
 // MARK: - AlbumCell
 class AlbumCell: UITableViewCell {
-
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var albumName: UILabel!
     
     // MARK: - Lifecycle

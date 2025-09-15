@@ -10,10 +10,11 @@ import Combine
 
 // MARK: - AlbumViewController
 final class AlbumViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - Vriables
     private let albumId: Int
     private let albumTitle: String
     private let viewModel = AlbumViewModel()
@@ -46,6 +47,7 @@ final class AlbumViewController: UIViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
         searchBar.delegate = self
         searchBar.placeholder = "Search in images.."
+        navigationController?.navigationBar.tintColor = .black
     }
     
     // MARK: - Bindings
