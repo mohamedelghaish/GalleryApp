@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Domain Models
 struct Photo {
     let albumId: Int
     let id: Int

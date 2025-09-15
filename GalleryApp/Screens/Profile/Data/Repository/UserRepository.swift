@@ -8,12 +8,13 @@
 import Foundation
 import Combine
 import Moya
-// MARK: - Repository Implementation
+// MARK: - Repository Protocol
 protocol UserRepository {
     func fetchUser() -> AnyPublisher<User, Error>
     func fetchAlbums(userId: Int) -> AnyPublisher<[Album], Error>
 }
 
+// MARK: - Repository Implementation
 final class UserRepositoryImpl: UserRepository {
     private let provider: MoyaProvider<APIService>
     

@@ -8,10 +8,12 @@
 import Foundation
 import Combine
 
+// MARK: - Use Case Protocol
 protocol FetchPhotosUseCase {
     func execute(albumId: Int) -> AnyPublisher<[Photo], Error>
 }
 
+// MARK: - Use Case Implementation
 final class FetchPhotosUseCaseImpl: FetchPhotosUseCase {
     private let repository: PhotoRepository
     

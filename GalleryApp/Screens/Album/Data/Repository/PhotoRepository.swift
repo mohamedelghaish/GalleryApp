@@ -9,10 +9,12 @@ import Foundation
 import Combine
 import Moya
 
+// MARK: - Repository Protocol
 protocol PhotoRepository {
     func fetchPhotos(albumId: Int) -> AnyPublisher<[Photo], Error>
 }
 
+// MARK: - Repository Implementation
 final class PhotoRepositoryImpl: PhotoRepository {
     private let provider: MoyaProvider<APIService>
     

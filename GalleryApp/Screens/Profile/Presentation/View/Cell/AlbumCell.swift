@@ -7,10 +7,12 @@
 
 import UIKit
 
+// MARK: - AlbumCell
 class AlbumCell: UITableViewCell {
 
     @IBOutlet weak var albumName: UILabel!
     
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

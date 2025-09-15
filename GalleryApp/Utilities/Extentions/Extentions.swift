@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// MARK: - UITableView Extension
 extension UITableView {
     func dequeue<T: UITableViewCell>(_: T.Type, for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as? T else {
@@ -23,9 +24,8 @@ extension UITableView {
     }
 }
 
-
+// MARK: - UICollectionView Extension
 extension UICollectionView {
-    
     func registerNib<T: UICollectionViewCell>(_: T.Type) {
         let name = String(describing: T.self)
         register(UINib(nibName: name, bundle: Bundle(for: T.self)), forCellWithReuseIdentifier: name)
@@ -41,6 +41,7 @@ extension UICollectionView {
     }
 }
 
+// MARK: - UIView Extension
 extension UIView {
     func findViewController() -> UIViewController? {
         var nextResponder: UIResponder? = self

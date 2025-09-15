@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+// MARK: - ImageViewerViewController
 class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,9 +26,9 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupScrollView()
         setupGestureRecognizers()
         loadImage()
@@ -39,7 +40,6 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
     }
 
     // MARK: - Setup
-    
     private func setupScrollView() {
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
@@ -52,6 +52,7 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addGestureRecognizer(doubleTapGesture)
     }
     
+    // MARK: - Image Loading
     private func loadImage() {
         // Using Kingfisher to load remote image
         image.kf.setImage(with: imageUrl, placeholder: UIImage(systemName: "placeholder"))
@@ -61,6 +62,7 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
         centerImage()
     }
 
+    // MARK: - Layout
     private func centerImage() {
         let scrollViewSize = scrollView.bounds.size
         let imageSize = image.frame.size
@@ -108,7 +110,6 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // MARK: - Actions
-    
     @IBAction func shareBtn(sender: Any) {
         guard let imageToShare = image.image else { return }
         

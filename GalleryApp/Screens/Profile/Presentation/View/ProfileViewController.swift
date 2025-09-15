@@ -7,6 +7,8 @@
 
 import UIKit
 import Combine
+
+// MARK: - ProfileViewController
 final class ProfileViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userAddress: UILabel!
@@ -24,6 +26,7 @@ final class ProfileViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -31,12 +34,14 @@ final class ProfileViewController: UIViewController {
         viewModel.loadUser()
     }
     
+    // MARK: - Setup UI
     private func setupUI() {
         albumTabelView.delegate = self
         albumTabelView.dataSource = self
         albumTabelView.registerNib(AlbumCell.self)
     }
     
+    // MARK: - Bindings
     private func bindViewModel() {
         viewModel.$user
             .sink { [weak self] user in
@@ -57,6 +62,7 @@ final class ProfileViewController: UIViewController {
 }
 
 
+// MARK: - UITableViewDelegate & DataSource
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.albums.count

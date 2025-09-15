@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Foundation
 
+// MARK: - AlbumViewModel
 final class AlbumViewModel: ObservableObject {
     @Published var photos: [Photo] = []
     @Published var filteredPhotos: [Photo] = []
@@ -20,6 +21,7 @@ final class AlbumViewModel: ObservableObject {
         self.fetchPhotosUseCase = FetchPhotosUseCaseImpl() 
     }
     
+    // MARK: - Network
     func fetchPhotos(albumId: Int) {
         fetchPhotosUseCase.execute(albumId: albumId)
             .receive(on: DispatchQueue.main)
@@ -34,6 +36,7 @@ final class AlbumViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    // MARK: - Filtering
     func filterPhotos(query: String) {
         filteredPhotos = query.isEmpty
         ? photos

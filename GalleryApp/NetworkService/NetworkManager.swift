@@ -8,12 +8,15 @@
 import Foundation
 import Moya
 import Combine
+
+// MARK: - API Service
 enum APIService {
     case getUsers
     case getAlbums(userId: Int)
     case getPhotos(albumId: Int)
 }
 
+// MARK: - TargetType Conformance
 extension APIService: TargetType {
     var baseURL: URL {
         return URL(string: "https://jsonplaceholder.typicode.com")!
@@ -50,8 +53,9 @@ extension APIService: TargetType {
     }
 }
 
-
+// MARK: - MoyaProvider + Fetching
 extension MoyaProvider {
+    // MARK: - Public API
     func fetchData<T: Decodable>(_ target: APIService, responseType: T.Type) -> AnyPublisher<T, Error> {
         Future<T, Error> { promise in
             self.request(target as! Target) { result in

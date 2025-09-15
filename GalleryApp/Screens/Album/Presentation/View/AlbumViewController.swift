@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 
+// MARK: - AlbumViewController
 final class AlbumViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -28,6 +29,7 @@ final class AlbumViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = albumTitle
@@ -36,6 +38,7 @@ final class AlbumViewController: UIViewController {
         viewModel.fetchPhotos(albumId: albumId)
     }
 
+    // MARK: - Setup UI
     private func setupUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -45,6 +48,7 @@ final class AlbumViewController: UIViewController {
         searchBar.placeholder = "Search in images.."
     }
     
+    // MARK: - Bindings
     private func bindViewModel() {
         viewModel.$filteredPhotos
             .receive(on: DispatchQueue.main)
@@ -54,6 +58,7 @@ final class AlbumViewController: UIViewController {
             .store(in: &cancellables)
     }
     
+    // MARK: - Layout
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { _, _ -> NSCollectionLayoutSection? in
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33),
@@ -71,6 +76,7 @@ final class AlbumViewController: UIViewController {
 }
 
 
+// MARK: - UICollectionViewDataSource & Delegate
 extension AlbumViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,  UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.filteredPhotos.count
@@ -83,6 +89,7 @@ extension AlbumViewController: UICollectionViewDataSource,UICollectionViewDelega
     }
 }
 
+// MARK: - UISearchBarDelegate
 extension AlbumViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterPhotos(query: searchText)

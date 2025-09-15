@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-// MARK: - Use Cases
+// MARK: - Use Case Protocols
 protocol FetchUserUseCase {
     func execute() -> AnyPublisher<User, Error>
 }
@@ -16,6 +16,7 @@ protocol FetchAlbumsUseCase {
     func execute(userId: Int) -> AnyPublisher<[Album], Error>
 }
 
+// MARK: - Use Case Implementations
 final class FetchUserUseCaseImpl: FetchUserUseCase {
     
     private let repository: UserRepository

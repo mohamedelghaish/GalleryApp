@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+// MARK: - DTOs
 struct PhotoDTO: Codable {
     let albumId: Int
     let id: Int
@@ -14,6 +16,7 @@ struct PhotoDTO: Codable {
     let thumbnailUrl: String
 }
 
+// MARK: - Mappers
 extension PhotoDTO {
     func toDomain() -> Photo {
         Photo(albumId: albumId,

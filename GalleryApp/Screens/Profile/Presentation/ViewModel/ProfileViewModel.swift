@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// MARK: - ProfileViewModel
 final class ProfileViewModel: ObservableObject {
     @Published var user: User?
     @Published var albums: [Album] = []
@@ -22,6 +23,7 @@ final class ProfileViewModel: ObservableObject {
         self.fetchAlbumsUseCase = FetchAlbumsUseCaseImpl() 
     }
     
+    // MARK: - Network
     func loadUser() {
         fetchUserUseCase.execute()
             .sink(receiveCompletion: { completion in
