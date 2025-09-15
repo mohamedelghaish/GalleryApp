@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E190C8312E77704D00F96D3E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E190C8302E77704D00F96D3E /* Kingfisher */; };
+		E190C8342E77706300F96D3E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E190C8332E77706300F96D3E /* Moya */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E190C7F12E776A3300F96D3E /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E190C8342E77706300F96D3E /* Moya in Frameworks */,
+				E190C8312E77704D00F96D3E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				E190C7F32E776A3300F96D3E /* GalleryApp */,
+				E190C8322E77706300F96D3E /* Frameworks */,
 				E190C7F22E776A3300F96D3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +64,13 @@
 				E190C7F12E776A3300F96D3E /* GalleryApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E190C8322E77706300F96D3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +93,8 @@
 			);
 			name = GalleryApp;
 			packageProductDependencies = (
+				E190C8302E77704D00F96D3E /* Kingfisher */,
+				E190C8332E77706300F96D3E /* Moya */,
 			);
 			productName = GalleryApp;
 			productReference = E190C7F12E776A3300F96D3E /* GalleryApp.app */;
@@ -107,6 +124,10 @@
 			);
 			mainGroup = E190C7E82E776A3300F96D3E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E190C82E2E77702000F96D3E /* XCRemoteSwiftPackageReference "Moya" */,
+				E190C82F2E77704D00F96D3E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E190C7F22E776A3300F96D3E /* Products */;
 			projectDirPath = "";
@@ -150,9 +171,8 @@
 				INFOPLIST_FILE = GalleryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -178,9 +198,8 @@
 				INFOPLIST_FILE = GalleryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +354,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E190C82E2E77702000F96D3E /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		E190C82F2E77704D00F96D3E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E190C8302E77704D00F96D3E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E190C82F2E77704D00F96D3E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		E190C8332E77706300F96D3E /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E190C82E2E77702000F96D3E /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E190C7E92E776A3300F96D3E /* Project object */;
 }
