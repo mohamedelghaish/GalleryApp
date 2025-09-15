@@ -14,7 +14,7 @@ class ImageViewerViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var closeBtn: UIButton!
+    
     
     // MARK: - Vriables
     let imageUrl: URL

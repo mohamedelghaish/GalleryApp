@@ -27,7 +27,7 @@ final class AlbumViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
-                    print("❌ Failed to load photos: \(error)")
+                    print("Failed to load photos: \(error)")
                 }
             }, receiveValue: { [weak self] photos in
                 self?.photos = photos

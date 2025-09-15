@@ -28,7 +28,7 @@ final class ProfileViewModel: ObservableObject {
         fetchUserUseCase.execute()
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
-                    print("❌ Failed to load user: \(error)")
+                    print("Failed to load user: \(error)")
                 }
             }, receiveValue: { [weak self] user in
                 self?.user = user
@@ -41,7 +41,7 @@ final class ProfileViewModel: ObservableObject {
         fetchAlbumsUseCase.execute(userId: userId)
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
-                    print("❌ Failed to load albums: \(error)")
+                    print("Failed to load albums: \(error)")
                 }
             }, receiveValue: { [weak self] albums in
                 self?.albums = albums
